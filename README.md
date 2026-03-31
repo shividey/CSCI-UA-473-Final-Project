@@ -34,7 +34,7 @@ nyc_housing_app/
 │   └── recommender.py      # The weighted ranking engine and hard-constraint filtering logic.
 ├── pages/
 │   ├── 1.Explorer.py     # Streamlit page for visualizing NYC housing trends and maps.
-│   └── 2.Matchmaker.py   # Streamlit page for the personalized recommendation interface.
+│   └── 2.Housing_Recommander.py   # Streamlit page for the personalized recommendation interface.
 ├── app.py                  # The main entry point and "Home" page for the Streamlit dashboard.
 ├── requirements.txt        # List of dependencies (streamlit, scikit-learn, pandas, plotly).
 └── README.md               # Documentation of the framework, data sources, and setup instructions.
@@ -47,8 +47,8 @@ nyc_housing_app/
 conda env create -f environment.yml
 conda activate nyc-housing
 pip install -r requirements.txt
-PYTHONPATH=src python -m nyc_housing_recommender.cli recommend --use-sample-data --income 72000 --household-size 2 --max-rent 2200 --preferred-borough Brooklyn --commute-priority 0.7
-PYTHONPATH=src streamlit run streamlit_app.py -- --data-dir data/sample
+PYTHONPATH=src python -m nyc_housing_recommender.cli recommend 
+PYTHONPATH=src streamlit run streamlit_app.py
 ```
 
 To inspect cluster summaries and policy signals:
